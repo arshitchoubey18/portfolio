@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arshit Choubey | DevOps Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121933;
+      --panel-2: #182246;
+      --text: #eaf0ff;
+      --muted: #aab6d3;
+      --accent: #6ea8fe;
+      --accent-2: #8ef0c9;
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+      --radius: 22px;
+      --max: 1150px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(110,168,254,0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(142,240,201,0.12), transparent 24%),
+        linear-gradient(180deg, #07101f 0%, #0b1020 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      background: rgba(8, 12, 25, 0.75);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+
+    .brand span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      padding: 86px 0 52px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(24,34,70,0.92), rgba(15,22,46,0.94));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(110,168,254,0.12);
+      border: 1px solid rgba(110,168,254,0.2);
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 5vw, 4.5rem);
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .hero-card p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 64ch;
+      margin-bottom: 24px;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #80b6ff);
+      color: #07101f;
+      border: none;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .profile-card {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100%;
+    }
+
+    .profile-top {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+
+    .avatar {
+      width: 82px;
+      height: 82px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #07101f;
+      display: grid;
+      place-items: center;
+      font-size: 1.8rem;
+      font-weight: 900;
+      box-shadow: 0 12px 30px rgba(110,168,254,0.25);
+    }
+
+    .profile-top h2 {
+      font-size: 1.4rem;
+      margin-bottom: 4px;
+    }
+
+    .profile-top p,
+    .small-text {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .profile-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .profile-item {
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .profile-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.92rem;
+      color: var(--accent-2);
+    }
+
+    section {
+      padding: 26px 0;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 18px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin-bottom: 22px;
+      max-width: 70ch;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card,
+    .project-card,
+    .timeline-card,
+    .edu-card,
+    .cert-card,
+    .achievement-card,
+    .contact-card {
+      padding: 24px;
+    }
+
+    .skill-card h3,
+    .project-card h3,
+    .timeline-card h3,
+    .edu-card h3,
+    .cert-card h3,
+    .achievement-card h3,
+    .contact-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.08rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(110,168,254,0.1);
+      border: 1px solid rgba(110,168,254,0.2);
+      color: #dce9ff;
+      font-size: 0.9rem;
+    }
+
+    ul {
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    li + li { margin-top: 8px; }
+
+    .timeline-card .date {
+      color: var(--accent-2);
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: inline-block;
+    }
+
+    .footer {
+      padding: 34px 0 60px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card,
+      .profile-card,
+      .skill-card,
+      .project-card,
+      .timeline-card,
+      .edu-card,
+      .cert-card,
+      .achievement-card,
+      .contact-card {
+        padding: 22px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      .hero-actions,
+      .hero-meta,
+      .nav-links {
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Arshit<span>.</span></div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="card hero-card">
+        <div class="eyebrow">Aspiring DevOps Engineer</div>
+        <h1>Arshit Choubey</h1>
+        <p>
+          Aspiring DevOps Engineer with hands-on experience in Linux troubleshooting, automation, and system monitoring.
+          Skilled in Docker, Jenkins, Kubernetes, GitOps (Argo CD), and monitoring tools, with a strong interest in building
+          scalable CI/CD pipelines and cloud-native applications.
+        </p>
+        <div class="hero-meta">
+          <div class="chip">Bengaluru, India</div>
+          <div class="chip">Technical Support to DevOps Transition</div>
+          <div class="chip">Linux • Automation • CI/CD</div>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="#contact">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="card profile-card">
+        <div>
+          <div class="profile-top">
+            <div class="avatar">AC</div>
+            <div>
+              <h2>Professional Snapshot</h2>
+              <p>DevOps-focused portfolio based strictly on resume details.</p>
+            </div>
+          </div>
+
+          <div class="profile-list">
+            <div class="profile-item">
+              <strong>Email</strong>
+              <span class="small-text">arshitchoubey0001@gmail.com</span>
+            </div>
+            <div class="profile-item">
+              <strong>Phone</strong>
+              <span class="small-text">+91-6261242640</span>
+            </div>
+            <div class="profile-item">
+              <strong>Profiles</strong>
+              <span class="small-text">Add your GitHub and LinkedIn links here before going live.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">
+          Started career as a Technical Support Engineer after completing Bachelor’s degree, gaining exposure to real-world production environments.
+          Passionate about automation, system reliability, troubleshooting, and modern DevOps workflows.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="grid-3">
+          <div class="card skill-card">
+            <h3>DevOps & Systems</h3>
+            <div class="tags">
+              <span class="tag">Linux (Ubuntu)</span>
+              <span class="tag">Windows</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Jenkins</span>
+              <span class="tag">Kubernetes</span>
+              <span class="tag">Argo CD</span>
+            </div>
+          </div>
+          <div class="card skill-card">
+            <h3>Monitoring & Cloud</h3>
+            <div class="tags">
+              <span class="tag">Prometheus</span>
+              <span class="tag">Grafana</span>
+              <span class="tag">AWS EC2</span>
+              <span class="tag">AWS S3</span>
+            </div>
+          </div>
+          <div class="card skill-card">
+            <h3>Automation & Networking</h3>
+            <div class="tags">
+              <span class="tag">Bash</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">Pipeline Creation</span>
+              <span class="tag">SSH</span>
+              <span class="tag">Ports</span>
+              <span class="tag">DNS Basics</span>
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="grid-2">
+          <div class="card project-card">
+            <h3>End-to-End CI/CD Pipeline (Jenkins + Docker + Kubernetes)</h3>
+            <ul>
+              <li>Designed and implemented a CI/CD pipeline for automated build, test, and deployment.</li>
+              <li>Integrated GitHub with Jenkins using webhooks for automatic pipeline triggering.</li>
+              <li>Containerized applications using Docker and deployed on Kubernetes cluster.</li>
+              <li>Implemented rolling updates to ensure zero downtime deployment.</li>
+            </ul>
+          </div>
+          <div class="card project-card">
+            <h3>GitOps Deployment using Argo CD</h3>
+            <ul>
+              <li>Implemented GitOps workflow using Argo CD for Kubernetes deployments.</li>
+              <li>Automated application deployment directly from Git repository.</li>
+              <li>Managed infrastructure using declarative configuration.</li>
+              <li>Enabled auto-sync and rollback features for reliable deployments.</li>
+            </ul>
+          </div>
+          <div class="card project-card">
+            <h3>Linux Automation using Bash Scripting</h3>
+            <ul>
+              <li>Developed Bash scripts for log cleanup and system monitoring.</li>
+              <li>Automated service health checks and routine system tasks.</li>
+              <li>Reduced manual operational effort and improved efficiency.</li>
+            </ul>
+          </div>
+          <div class="card project-card">
+            <h3>Dockerized Application Deployment</h3>
+            <ul>
+              <li>Built and managed Docker images for web applications.</li>
+              <li>Handled container lifecycle and networking.</li>
+              <li>Deployed and managed multi-container applications.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="grid-2">
+          <div class="card timeline-card">
+            <span class="date">June 2025 – Present</span>
+            <h3>Technical Support Engineer</h3>
+            <p class="small-text" style="margin-bottom: 12px;">Joules to Watts Business Solutions, Bengaluru</p>
+            <ul>
+              <li>Joined as a fresher after completing Bachelor’s degree.</li>
+              <li>Performed Linux-based log analysis and troubleshooting for system issues.</li>
+              <li>Automated repetitive operational tasks using Bash scripting.</li>
+              <li>Monitored system performance, processes, and services.</li>
+              <li>Worked on incident management and Root Cause Analysis (RCA).</li>
+              <li>Resolved tickets within SLA and collaborated with cross-functional teams.</li>
+            </ul>
+          </div>
+          <div class="card achievement-card">
+            <h3>Professional Strengths</h3>
+            <ul>
+              <li>Hands-on troubleshooting mindset from production support exposure.</li>
+              <li>Strong foundation in Linux, automation, and monitoring workflows.</li>
+              <li>Focused on transitioning into DevOps through practical projects.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <h2 class="section-title">Education & Certifications</h2>
+        <div class="grid-3">
+          <div class="card edu-card">
+            <h3>Education</h3>
+            <p><strong>Bachelor’s Degree</strong></p>
+            <p class="small-text">North East Christian University</p>
+          </div>
+          <div class="card cert-card">
+            <h3>Certifications</h3>
+            <ul>
+              <li>DevOps Training (Self-Learned via YouTube and Hands-on Practice)</li>
+              <li>DevOps Master Program – Simplilearn</li>
+            </ul>
+          </div>
+          <div class="card achievement-card">
+            <h3>Achievements</h3>
+            <ul>
+              <li>Built multiple real-world DevOps projects using modern tools and workflows.</li>
+              <li>Consistently practiced Linux, Git, and automation skills.</li>
+              <li>Strong problem-solving and troubleshooting mindset.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="grid-2">
+          <div class="card contact-card">
+            <h3>Get in Touch</h3>
+            <p class="section-subtitle" style="margin-bottom: 14px;">
+              Open to DevOps opportunities, practical projects, and roles involving Linux, automation, monitoring, and CI/CD workflows.
+            </p>
+            <ul>
+              <li>Email: arshitchoubey0001@gmail.com</li>
+              <li>Phone: +91-6261242640</li>
+              <li>GitHub: Add your profile URL</li>
+              <li>LinkedIn: Add your profile URL</li>
+            </ul>
+          </div>
+          <div class="card contact-card">
+            <h3>Quick Note Before Publishing</h3>
+            <ul>
+              <li>Replace the GitHub and LinkedIn placeholders with your actual profile links.</li>
+              <li>Save this file as <strong>index.html</strong>.</li>
+              <li>Upload it to a GitHub repository and enable GitHub Pages.</li>
+              <li>Your portfolio can stay live for free on GitHub Pages.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Arshit Choubey • DevOps Portfolio</p>
+    </div>
+  </footer>
+</body>
+</html>
