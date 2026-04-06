@@ -197,9 +197,15 @@
       color: #07101f;
       display: grid;
       place-items: center;
-      font-size: 1.8rem;
+      font-size: 1rem;
       font-weight: 900;
       box-shadow: 0 12px 30px rgba(110,168,254,0.25);
+      background-image: url(profile.jpg);
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      text-align: center;
+      padding: 8px;
     }
 
     .profile-top h2 {
@@ -398,11 +404,17 @@
       <div class="card profile-card">
         <div>
           <div class="profile-top">
-            <div class="avatar">AC</div>
+            <div class="avatar" id="photoPreview"><img src="profile.jpg" alt="profile image"></div>
             <div>
               <h2>Professional Snapshot</h2>
               <p>DevOps-focused portfolio based strictly on resume details.</p>
             </div>
+          </div>
+
+          <div class="profile-item" style="margin-bottom: 18px;">
+            <strong>Profile Photo</strong>
+            <span class="small-text" style="display:block; margin-bottom: 10px;">You can upload your photo later from your own device before publishing.</span>
+            <input type="file" id="photoInput" accept="image/*" style="width:100%; color: var(--muted);" />
           </div>
 
           <div class="profile-list">
@@ -488,6 +500,7 @@
               <li>Containerized applications using Docker and deployed on Kubernetes cluster.</li>
               <li>Implemented rolling updates to ensure zero downtime deployment.</li>
             </ul>
+            <p class="small-text" style="margin-top: 14px;">GitHub Repo: <a href="#" target="_blank">Add your repository link here</a></p>
           </div>
           <div class="card project-card">
             <h3>GitOps Deployment using Argo CD</h3>
@@ -497,6 +510,7 @@
               <li>Managed infrastructure using declarative configuration.</li>
               <li>Enabled auto-sync and rollback features for reliable deployments.</li>
             </ul>
+            <p class="small-text" style="margin-top: 14px;">GitHub Repo: <a href="#" target="_blank">Add your repository link here</a></p>
           </div>
           <div class="card project-card">
             <h3>Linux Automation using Bash Scripting</h3>
@@ -505,6 +519,7 @@
               <li>Automated service health checks and routine system tasks.</li>
               <li>Reduced manual operational effort and improved efficiency.</li>
             </ul>
+            <p class="small-text" style="margin-top: 14px;">GitHub Repo: <a href="#" target="_blank">Add your repository link here</a></p>
           </div>
           <div class="card project-card">
             <h3>Dockerized Application Deployment</h3>
@@ -513,6 +528,7 @@
               <li>Handled container lifecycle and networking.</li>
               <li>Deployed and managed multi-container applications.</li>
             </ul>
+            <p class="small-text" style="margin-top: 14px;">GitHub Repo: <a href="#" target="_blank">Add your repository link here</a></p>
           </div>
         </div>
       </div>
@@ -610,5 +626,23 @@
       <p>© 2026 Arshit Choubey • DevOps Portfolio</p>
     </div>
   </footer>
+  <script>
+    const photoInput = document.getElementById('photoInput');
+    const photoPreview = document.getElementById('photoPreview');
+
+    if (photoInput && photoPreview) {
+      photoInput.addEventListener('change', function () {
+        const file = this.files && this.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          photoPreview.style.backgroundImage = `url('${e.target.result}')`;
+          photoPreview.textContent = '';
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+  </script>
 </body>
 </html>
