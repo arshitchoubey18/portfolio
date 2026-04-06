@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,26 +14,36 @@
       --muted: #aab6d3;
       --accent: #6ea8fe;
       --accent-2: #8ef0c9;
-      --border: rgba(255,255,255,0.08);
-      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+      --border: rgba(255, 255, 255, 0.08);
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
       --radius: 22px;
       --max: 1150px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(110,168,254,0.18), transparent 28%),
-        radial-gradient(circle at top right, rgba(142,240,201,0.12), transparent 24%),
+        radial-gradient(circle at top left, rgba(110, 168, 254, 0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(142, 240, 201, 0.12), transparent 24%),
         linear-gradient(180deg, #07101f 0%, #0b1020 100%);
       color: var(--text);
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .container {
       width: min(92%, var(--max));
@@ -62,7 +73,9 @@
       letter-spacing: 0.4px;
     }
 
-    .brand span { color: var(--accent); }
+    .brand span {
+      color: var(--accent);
+    }
 
     .nav-links {
       display: flex;
@@ -76,7 +89,9 @@
       transition: 0.25s ease;
     }
 
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover {
+      color: var(--text);
+    }
 
     .hero {
       padding: 86px 0 52px;
@@ -90,7 +105,7 @@
     }
 
     .card {
-      background: linear-gradient(180deg, rgba(24,34,70,0.92), rgba(15,22,46,0.94));
+      background: linear-gradient(180deg, rgba(24, 34, 70, 0.92), rgba(15, 22, 46, 0.94));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -106,8 +121,8 @@
       gap: 8px;
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(110,168,254,0.12);
-      border: 1px solid rgba(110,168,254,0.2);
+      background: rgba(110, 168, 254, 0.12);
+      border: 1px solid rgba(110, 168, 254, 0.2);
       color: var(--accent);
       font-size: 0.9rem;
       font-weight: 700;
@@ -137,7 +152,7 @@
     .chip {
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border);
       color: var(--text);
       font-size: 0.95rem;
@@ -167,11 +182,13 @@
     }
 
     .btn-secondary {
-      background: rgba(255,255,255,0.04);
+      background: rgba(255, 255, 255, 0.04);
       color: var(--text);
     }
 
-    .btn:hover { transform: translateY(-2px); }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
 
     .profile-card {
       padding: 28px;
@@ -193,7 +210,7 @@
       height: 140px;
       border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 12px 30px rgba(110,168,254,0.25);
+      box-shadow: 0 12px 30px rgba(110, 168, 254, 0.25);
       flex-shrink: 0;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       display: block;
@@ -228,7 +245,7 @@
       padding: 14px;
       border: 1px solid var(--border);
       border-radius: 16px;
-      background: rgba(255,255,255,0.03);
+      background: rgba(255, 255, 255, 0.03);
     }
 
     .profile-item strong {
@@ -295,8 +312,8 @@
     .tag {
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(110,168,254,0.1);
-      border: 1px solid rgba(110,168,254,0.2);
+      background: rgba(110, 168, 254, 0.1);
+      border: 1px solid rgba(110, 168, 254, 0.2);
       color: #dce9ff;
       font-size: 0.9rem;
     }
@@ -306,7 +323,9 @@
       color: var(--muted);
     }
 
-    li + li { margin-top: 8px; }
+    li+li {
+      margin-top: 8px;
+    }
 
     .timeline-card .date {
       color: var(--accent-2);
@@ -339,6 +358,7 @@
     }
 
     @media (max-width: 980px) {
+
       .hero-grid,
       .grid-3,
       .grid-2 {
@@ -389,6 +409,7 @@
     }
   </style>
 </head>
+
 <body>
   <nav class="nav">
     <div class="container nav-inner">
@@ -411,7 +432,8 @@
         <h1>Arshit Choubey</h1>
         <p>
           Aspiring DevOps Engineer with hands-on experience in Linux troubleshooting, automation, and system monitoring.
-          Skilled in Docker, Jenkins, Kubernetes, GitOps (Argo CD), and monitoring tools, with a strong interest in building
+          Skilled in Docker, Jenkins, Kubernetes, GitOps (Argo CD), and monitoring tools, with a strong interest in
+          building
           scalable CI/CD pipelines and cloud-native applications.
         </p>
         <div class="hero-meta">
@@ -420,10 +442,10 @@
           <div class="chip">Linux • Automation • CI/CD</div>
         </div>
         <div class="hero-actions">
-  <a class="btn btn-primary" href="#projects">View Projects</a>
-  <a class="btn btn-secondary" href="#contact">Contact Me</a>
-  <a class="btn btn-secondary" href="resume.pdf" download>Download Resume</a>
-</div>
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="#contact">Contact Me</a>
+          <a class="btn btn-secondary" href="resume.pdf" download>Download Resume</a>
+        </div>
       </div>
 
       <div class="card profile-card">
@@ -465,7 +487,8 @@
       <div class="container">
         <h2 class="section-title">About Me</h2>
         <p class="section-subtitle">
-          Started career as a Technical Support Engineer after completing Bachelor’s degree, gaining exposure to real-world production environments.
+          Started career as a Technical Support Engineer after completing Bachelor’s degree, gaining exposure to
+          real-world production environments.
           Passionate about automation, system reliability, troubleshooting, and modern DevOps workflows.
         </p>
       </div>
@@ -622,12 +645,14 @@
           <div class="card contact-card">
             <h3>Get in Touch</h3>
             <p class="section-subtitle" style="margin-bottom: 14px;">
-              Open to DevOps opportunities, practical projects, and roles involving Linux, automation, monitoring, and CI/CD workflows.
+              Open to DevOps opportunities, practical projects, and roles involving Linux, automation, monitoring, and
+              CI/CD workflows.
             </p>
             <ul class="contact-links">
               <li>Email: <a href="mailto:arshitchoubey0001@gmail.com">arshitchoubey0001@gmail.com</a></li>
               <li>Phone: <a href="tel:+916261242640">+91-6261242640</a></li>
-              <li>GitHub: <a href="https://github.com/arshitchoubey18" target="_blank">github.com/arshitchoubey18</a></li>
+              <li>GitHub: <a href="https://github.com/arshitchoubey18" target="_blank">github.com/arshitchoubey18</a>
+              </li>
               <li>LinkedIn: <a href="#" target="_blank">Add your LinkedIn profile URL</a></li>
             </ul>
           </div>
@@ -651,4 +676,5 @@
     </div>
   </footer>
 </body>
+
 </html>
