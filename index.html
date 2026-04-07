@@ -4,26 +4,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Arshit Choubey | DevOps Portfolio</title>
+  <title>Arshit Choubey | DevOps Engineer</title>
+  <meta name="description"
+    content="Arshit Choubey - DevOps Engineer portfolio featuring experience, projects, skills, certifications, and contact details." />
   <style>
     :root {
-      --bg: #0b1020;
-      --panel: #121933;
-      --panel-2: #182246;
-      --text: #eaf0ff;
-      --muted: #aab6d3;
-      --accent: #6ea8fe;
-      --accent-2: #8ef0c9;
+      --bg: #081120;
+      --bg-soft: #0d1830;
+      --panel: rgba(15, 23, 42, 0.82);
+      --panel-2: rgba(20, 32, 61, 0.92);
+      --text: #e8eefc;
+      --muted: #9fb0d3;
+      --accent: #60a5fa;
+      --accent-2: #34d399;
       --border: rgba(255, 255, 255, 0.08);
-      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
       --radius: 22px;
-      --max: 1150px;
+      --max-width: 1180px;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -32,21 +35,26 @@
 
     body {
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(110, 168, 254, 0.18), transparent 28%),
-        radial-gradient(circle at top right, rgba(142, 240, 201, 0.12), transparent 24%),
-        linear-gradient(180deg, #07101f 0%, #0b1020 100%);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at top left, rgba(96, 165, 250, 0.18), transparent 25%),
+        radial-gradient(circle at top right, rgba(52, 211, 153, 0.12), transparent 22%),
+        linear-gradient(180deg, #06101d 0%, #081120 100%);
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     .container {
-      width: min(92%, var(--max));
+      width: min(92%, var(--max-width));
       margin: 0 auto;
     }
 
@@ -55,7 +63,7 @@
       top: 0;
       z-index: 1000;
       backdrop-filter: blur(14px);
-      background: rgba(8, 12, 25, 0.75);
+      background: rgba(7, 12, 24, 0.75);
       border-bottom: 1px solid var(--border);
     }
 
@@ -63,8 +71,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 18px;
       padding: 18px 0;
-      gap: 16px;
     }
 
     .brand {
@@ -94,18 +102,18 @@
     }
 
     .hero {
-      padding: 86px 0 52px;
+      padding: 80px 0 42px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.3fr 0.9fr;
-      gap: 28px;
+      grid-template-columns: 1.25fr 0.85fr;
+      gap: 24px;
       align-items: stretch;
     }
 
     .card {
-      background: linear-gradient(180deg, rgba(24, 34, 70, 0.92), rgba(15, 22, 46, 0.94));
+      background: linear-gradient(180deg, var(--panel-2), var(--panel));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -119,27 +127,27 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(110, 168, 254, 0.12);
-      border: 1px solid rgba(110, 168, 254, 0.2);
-      color: var(--accent);
       font-size: 0.9rem;
       font-weight: 700;
+      color: var(--accent);
+      background: rgba(96, 165, 250, 0.12);
+      border: 1px solid rgba(96, 165, 250, 0.22);
+      border-radius: 999px;
+      padding: 8px 14px;
       margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(2.3rem, 5vw, 4.5rem);
+      font-size: clamp(2.6rem, 5vw, 4.5rem);
       line-height: 1.05;
       margin-bottom: 14px;
     }
 
-    .hero-card p {
+    .hero-subtitle {
+      font-size: 1.08rem;
       color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 64ch;
-      margin-bottom: 24px;
+      max-width: 68ch;
+      margin-bottom: 22px;
     }
 
     .hero-meta {
@@ -152,42 +160,42 @@
     .chip {
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.04);
       border: 1px solid var(--border);
+      font-size: 0.92rem;
       color: var(--text);
-      font-size: 0.95rem;
     }
 
     .hero-actions {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
+      gap: 14px;
     }
 
     .btn {
-      padding: 13px 20px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      font-weight: 700;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      transition: 0.25s ease;
+      padding: 13px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #80b6ff);
-      color: #07101f;
+      background: linear-gradient(135deg, var(--accent), #8cbcff);
+      color: #081120;
       border: none;
     }
 
     .btn-secondary {
       background: rgba(255, 255, 255, 0.04);
       color: var(--text);
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
     }
 
     .profile-card {
@@ -206,14 +214,13 @@
     }
 
     .avatar {
-      width: 140px;
-      height: 140px;
+      width: 130px;
+      height: 130px;
       border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 12px 30px rgba(110, 168, 254, 0.25);
-      flex-shrink: 0;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      display: block;
+      flex-shrink: 0;
+      box-shadow: 0 12px 32px rgba(96, 165, 250, 0.28);
     }
 
     .avatar img {
@@ -221,86 +228,76 @@
       height: 100%;
       object-fit: cover;
       object-position: center top;
-      display: block;
     }
 
     .profile-top h2 {
-      font-size: 1.8rem;
+      font-size: 1.65rem;
       margin-bottom: 6px;
     }
 
-    .profile-top p,
     .small-text {
       color: var(--muted);
-      font-size: 0.96rem;
+      font-size: 0.95rem;
     }
 
     .profile-list {
       display: grid;
       gap: 14px;
-      margin-top: 10px;
     }
 
     .profile-item {
-      padding: 14px;
-      border: 1px solid var(--border);
+      padding: 15px;
       border-radius: 16px;
+      border: 1px solid var(--border);
       background: rgba(255, 255, 255, 0.03);
     }
 
     .profile-item strong {
       display: block;
-      margin-bottom: 4px;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: var(--accent-2);
+      margin-bottom: 4px;
     }
 
     section {
       padding: 26px 0;
     }
 
+    .section-heading {
+      margin-bottom: 22px;
+    }
+
     .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 18px;
+      font-size: 1.9rem;
+      margin-bottom: 8px;
     }
 
     .section-subtitle {
       color: var(--muted);
-      margin-bottom: 22px;
-      max-width: 70ch;
+      max-width: 75ch;
     }
 
+    .grid-2,
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
     .grid-2 {
-      display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
     }
 
-    .skill-card,
-    .project-card,
-    .timeline-card,
-    .edu-card,
-    .cert-card,
-    .achievement-card,
-    .contact-card {
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .content-card {
       padding: 24px;
     }
 
-    .skill-card h3,
-    .project-card h3,
-    .timeline-card h3,
-    .edu-card h3,
-    .cert-card h3,
-    .achievement-card h3,
-    .contact-card h3 {
-      margin-bottom: 12px;
+    .content-card h3 {
       font-size: 1.08rem;
+      margin-bottom: 12px;
     }
 
     .tags {
@@ -312,10 +309,10 @@
     .tag {
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(110, 168, 254, 0.1);
-      border: 1px solid rgba(110, 168, 254, 0.2);
-      color: #dce9ff;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
+      background: rgba(96, 165, 250, 0.1);
+      border: 1px solid rgba(96, 165, 250, 0.2);
+      color: #dce8ff;
     }
 
     ul {
@@ -323,57 +320,61 @@
       color: var(--muted);
     }
 
-    li+li {
+    li + li {
       margin-top: 8px;
     }
 
-    .timeline-card .date {
+    .timeline-date {
+      display: inline-block;
+      margin-bottom: 8px;
       color: var(--accent-2);
       font-weight: 700;
-      margin-bottom: 8px;
-      display: inline-block;
+      font-size: 0.95rem;
     }
 
-    .repo-link {
+    .company {
+      color: var(--muted);
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+
+    .repo-link,
+    .inline-links {
       margin-top: 14px;
       color: var(--muted);
+      font-size: 0.94rem;
     }
 
     .repo-link a,
+    .inline-links a,
     .contact-links a {
       color: var(--accent-2);
       word-break: break-word;
     }
 
     .repo-link a:hover,
+    .inline-links a:hover,
     .contact-links a:hover {
       color: var(--accent);
     }
 
     .footer {
-      padding: 34px 0 60px;
+      padding: 36px 0 56px;
       text-align: center;
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 0.94rem;
     }
 
     @media (max-width: 980px) {
-
       .hero-grid,
-      .grid-3,
-      .grid-2 {
+      .grid-2,
+      .grid-3 {
         grid-template-columns: 1fr;
       }
 
       .hero-card,
       .profile-card,
-      .skill-card,
-      .project-card,
-      .timeline-card,
-      .edu-card,
-      .cert-card,
-      .achievement-card,
-      .contact-card {
+      .content-card {
         padding: 22px;
       }
     }
@@ -388,9 +389,9 @@
         padding-top: 54px;
       }
 
+      .nav-links,
       .hero-actions,
-      .hero-meta,
-      .nav-links {
+      .hero-meta {
         width: 100%;
       }
 
@@ -417,8 +418,8 @@
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </div>
@@ -428,19 +429,21 @@
   <header class="hero">
     <div class="container hero-grid">
       <div class="card hero-card">
-        <div class="eyebrow">Aspiring DevOps Engineer</div>
+        <div class="eyebrow">DevOps Engineer</div>
         <h1>Arshit Choubey</h1>
-        <p>
-          Aspiring DevOps Engineer with hands-on experience in Linux troubleshooting, automation, and system monitoring.
-          Skilled in Docker, Jenkins, Kubernetes, GitOps (Argo CD), and monitoring tools, with a strong interest in
-          building
-          scalable CI/CD pipelines and cloud-native applications.
+        <p class="hero-subtitle">
+          DevOps Engineer with 3+ years of experience in system troubleshooting, incident handling,
+          operational support, and infrastructure-related workflows. Hands-on experience with Linux,
+          Bash, Docker, Jenkins, Kubernetes, and Argo CD, with a strong foundation in automation,
+          CI/CD, containerized deployments, and cloud-native operations.
         </p>
+
         <div class="hero-meta">
           <div class="chip">Bengaluru, India</div>
-          <div class="chip">Technical Support to DevOps Transition</div>
-          <div class="chip">Linux • Automation • CI/CD</div>
+          <div class="chip">3+ Years Experience</div>
+          <div class="chip">Linux • CI/CD • Kubernetes</div>
         </div>
+
         <div class="hero-actions">
           <a class="btn btn-primary" href="#projects">View Projects</a>
           <a class="btn btn-secondary" href="#contact">Contact Me</a>
@@ -455,8 +458,11 @@
               <img src="profile.jpg" alt="Arshit Choubey profile photo">
             </div>
             <div>
-              <h2>Who I Am</h2>
-              <p>DevOps Engineer with hands-on experience in automation, CI/CD pipelines, and system monitoring.</p>
+              <h2>Profile</h2>
+              <p class="small-text">
+                DevOps Engineer focused on automation, deployment workflows, infrastructure support,
+                monitoring, and operational reliability.
+              </p>
             </div>
           </div>
 
@@ -470,11 +476,17 @@
               <span class="small-text">+91-6261242640</span>
             </div>
             <div class="profile-item">
-              <strong>Profiles</strong>
+              <strong>Professional Links</strong>
               <span class="small-text contact-links">
-                GitHub: <a href="https://github.com/arshitchoubey18" target="_blank">github.com/arshitchoubey18</a><br>
-                LinkedIn: <a href="#" target="_blank">Add your LinkedIn profile URL</a>
+                GitHub:
+                <a href="https://github.com/arshitchoubey18" target="_blank">github.com/arshitchoubey18</a><br>
+                LinkedIn:
+                <a href="#" target="_blank">Add your LinkedIn profile URL</a>
               </span>
+            </div>
+            <div class="profile-item">
+              <strong>Core Focus</strong>
+              <span class="small-text">Automation, CI/CD, Containers, Monitoring, GitOps, Troubleshooting</span>
             </div>
           </div>
         </div>
@@ -485,97 +497,67 @@
   <main>
     <section id="about">
       <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">
-          Started career as a Technical Support Engineer after completing Bachelor’s degree, gaining exposure to
-          real-world production environments.
-          Passionate about automation, system reliability, troubleshooting, and modern DevOps workflows.
-        </p>
+        <div class="section-heading">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">
+            DevOps Engineer with practical experience in system troubleshooting, incident handling,
+            deployment workflows, and operational support. Skilled in working with Linux, Bash, Docker,
+            Jenkins, Kubernetes, Argo CD, Prometheus, and Grafana across project-based implementations
+            and hands-on learning.
+          </p>
+        </div>
       </div>
     </section>
 
     <section id="skills">
       <div class="container">
-        <h2 class="section-title">Technical Skills</h2>
+        <div class="section-heading">
+          <h2 class="section-title">Technical Skills</h2>
+          <p class="section-subtitle">
+            A focused DevOps skill set covering operating systems, automation, CI/CD, cloud, monitoring,
+            troubleshooting, and deployment tools.
+          </p>
+        </div>
+
         <div class="grid-3">
-          <div class="card skill-card">
-            <h3>DevOps & Systems</h3>
+          <div class="card content-card">
+            <h3>Systems & DevOps Tools</h3>
             <div class="tags">
               <span class="tag">Linux (Ubuntu)</span>
               <span class="tag">Windows</span>
-              <span class="tag">Docker</span>
               <span class="tag">Jenkins</span>
+              <span class="tag">Docker</span>
               <span class="tag">Kubernetes</span>
               <span class="tag">Argo CD</span>
             </div>
           </div>
-          <div class="card skill-card">
-            <h3>Monitoring & Cloud</h3>
+
+          <div class="card content-card">
+            <h3>Cloud, Monitoring & GitOps</h3>
             <div class="tags">
+              <span class="tag">AWS</span>
+              <span class="tag">Azure</span>
               <span class="tag">Prometheus</span>
               <span class="tag">Grafana</span>
-              <span class="tag">AWS EC2</span>
-              <span class="tag">AWS S3</span>
+              <span class="tag">Auto-Sync</span>
+              <span class="tag">Rollback</span>
             </div>
           </div>
-          <div class="card skill-card">
-            <h3>Automation & Networking</h3>
+
+          <div class="card content-card">
+            <h3>Automation & Troubleshooting</h3>
             <div class="tags">
               <span class="tag">Bash</span>
-              <span class="tag">CI/CD</span>
-              <span class="tag">Pipeline Creation</span>
-              <span class="tag">SSH</span>
-              <span class="tag">Ports</span>
-              <span class="tag">DNS Basics</span>
+              <span class="tag">Shell Scripting</span>
               <span class="tag">Git</span>
               <span class="tag">GitHub</span>
+              <span class="tag">GitHub Webhooks</span>
+              <span class="tag">YAML</span>
+              <span class="tag">SSH</span>
+              <span class="tag">DNS</span>
+              <span class="tag">RCA</span>
+              <span class="tag">SLA Management</span>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <div class="grid-2">
-          <div class="card project-card">
-            <h3>End-to-End CI/CD Pipeline (Jenkins + Docker + Kubernetes)</h3>
-            <ul>
-              <li>Designed and implemented a CI/CD pipeline for automated build, test, and deployment.</li>
-              <li>Integrated GitHub with Jenkins using webhooks for automatic pipeline triggering.</li>
-              <li>Containerized applications using Docker and deployed on Kubernetes cluster.</li>
-              <li>Implemented rolling updates to ensure zero downtime deployment.</li>
-            </ul>
-            <p class="repo-link">GitHub Repo: <a href="#" target="_blank">Add your repository link here</a></p>
-          </div>
-          <div class="card project-card">
-            <h3>GitOps Deployment using Argo CD</h3>
-            <ul>
-              <li>Implemented GitOps workflow using Argo CD for Kubernetes deployments.</li>
-              <li>Automated application deployment directly from Git repository.</li>
-              <li>Managed infrastructure using declarative configuration.</li>
-              <li>Enabled auto-sync and rollback features for reliable deployments.</li>
-            </ul>
-            <p class="repo-link">GitHub Repo: <a href="#" target="_blank">Add your repository link here</a></p>
-          </div>
-          <div class="card project-card">
-            <h3>Linux Automation using Bash Scripting</h3>
-            <ul>
-              <li>Developed Bash scripts for log cleanup and system monitoring.</li>
-              <li>Automated service health checks and routine system tasks.</li>
-              <li>Reduced manual operational effort and improved efficiency.</li>
-            </ul>
-            <p class="repo-link">GitHub Repo: <a href="#" target="_blank">Add your repository link here</a></p>
-          </div>
-          <div class="card project-card">
-            <h3>Dockerized Application Deployment</h3>
-            <ul>
-              <li>Built and managed Docker images for web applications.</li>
-              <li>Handled container lifecycle and networking.</li>
-              <li>Deployed and managed multi-container applications.</li>
-            </ul>
-            <p class="repo-link">GitHub Repo: <a href="#" target="_blank">Add your repository link here</a></p>
           </div>
         </div>
       </div>
@@ -583,27 +565,110 @@
 
     <section id="experience">
       <div class="container">
-        <h2 class="section-title">Experience</h2>
+        <div class="section-heading">
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-subtitle">
+            Professional background spanning DevOps-focused roles with experience in operations,
+            infrastructure support, issue resolution, and deployment-related workflows.
+          </p>
+        </div>
+
         <div class="grid-2">
-          <div class="card timeline-card">
-            <span class="date">June 2025 – Present</span>
-            <h3>Technical Support Engineer</h3>
-            <p class="small-text" style="margin-bottom: 12px;">Joules to Watts Business Solutions, Bengaluru</p>
+          <div class="card content-card">
+            <span class="timeline-date">June 2026 – Present</span>
+            <h3>DevOps Engineer</h3>
+            <p class="company">Joules to Watts Business Solutions, Bengaluru</p>
             <ul>
-              <li>Joined as a fresher after completing Bachelor’s degree.</li>
-              <li>Performed Linux-based log analysis and troubleshooting for system issues.</li>
-              <li>Automated repetitive operational tasks using Bash scripting.</li>
-              <li>Monitored system performance, processes, and services.</li>
-              <li>Worked on incident management and Root Cause Analysis (RCA).</li>
-              <li>Resolved tickets within SLA and collaborated with cross-functional teams.</li>
+              <li>Working across infrastructure-related workflows, system troubleshooting, and operational support activities.</li>
+              <li>Supporting deployment processes, issue analysis, and service reliability initiatives.</li>
+              <li>Handling incident investigation, log analysis, and root cause identification for operational issues.</li>
+              <li>Contributing to automation-oriented tasks and improving operational efficiency.</li>
             </ul>
           </div>
-          <div class="card achievement-card">
-            <h3>Professional Strengths</h3>
+
+          <div class="card content-card">
+            <span class="timeline-date">March 2023 – June 2026</span>
+            <h3>Junior DevOps Engineer</h3>
+            <p class="company">Concentrix Services India Pvt. Ltd., Bengaluru</p>
             <ul>
-              <li>Hands-on troubleshooting mindset from production support exposure.</li>
-              <li>Strong foundation in Linux, automation, and monitoring workflows.</li>
-              <li>Focused on transitioning into DevOps through practical projects.</li>
+              <li>Supported operational workflows, issue resolution, and troubleshooting activities in SLA-driven environments.</li>
+              <li>Worked on incident handling, log analysis, and system-level issue investigation.</li>
+              <li>Built practical exposure to Linux, Bash, Docker, Jenkins, Kubernetes, and Argo CD through implementation-driven learning.</li>
+              <li>Strengthened deployment, automation, and troubleshooting knowledge through hands-on DevOps projects.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <h2 class="section-title">Projects</h2>
+          <p class="section-subtitle">
+            DevOps-focused hands-on projects demonstrating automation, CI/CD implementation,
+            containerization, GitOps, and monitoring capabilities.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card content-card">
+            <h3>End-to-End CI/CD Pipeline using Jenkins, Docker, and Kubernetes</h3>
+            <ul>
+              <li>Built a CI/CD pipeline to automate build, containerization, and deployment processes.</li>
+              <li>Configured GitHub webhooks to trigger Jenkins pipelines automatically on code changes.</li>
+              <li>Created Docker images and deployed applications to Kubernetes using YAML configurations.</li>
+              <li>Implemented rolling updates for smoother and more reliable deployments.</li>
+            </ul>
+            <p class="repo-link">GitHub Repo: <a href="#" target="_blank">Add your repository link here</a></p>
+          </div>
+
+          <div class="card content-card">
+            <h3>Linux Automation using Bash Scripting</h3>
+            <ul>
+              <li>Automated system maintenance tasks such as log cleanup, disk checks, and service monitoring using Bash.</li>
+              <li>Reduced repetitive manual effort by developing reusable shell scripts.</li>
+              <li>Improved operational efficiency through automated health-check and troubleshooting scripts.</li>
+            </ul>
+            <p class="repo-link">GitHub Repo: <a href="#" target="_blank">Add your repository link here</a></p>
+          </div>
+
+          <div class="card content-card">
+            <h3>Dockerized Application Deployment</h3>
+            <ul>
+              <li>Containerized applications using Docker to ensure consistent execution across environments.</li>
+              <li>Managed Docker images, containers, and Docker Compose configurations.</li>
+              <li>Worked on container lifecycle management, networking, and deployment setup.</li>
+            </ul>
+            <p class="repo-link">GitHub Repo: <a href="#" target="_blank">Add your repository link here</a></p>
+          </div>
+
+          <div class="card content-card">
+            <h3>GitOps Deployment using Argo CD</h3>
+            <ul>
+              <li>Implemented GitOps deployment practices using Argo CD and Kubernetes manifests stored in Git.</li>
+              <li>Managed declarative application delivery with version-controlled deployment configurations.</li>
+              <li>Used auto-sync and rollback capabilities for reliable release management.</li>
+            </ul>
+            <p class="repo-link">GitHub Repo: <a href="#" target="_blank">Add your repository link here</a></p>
+          </div>
+
+          <div class="card content-card">
+            <h3>Monitoring Setup using Prometheus and Grafana</h3>
+            <ul>
+              <li>Set up monitoring for system metrics using Prometheus and Grafana.</li>
+              <li>Created dashboards for CPU, memory, and resource utilization tracking.</li>
+              <li>Improved visibility into infrastructure health and operational performance.</li>
+            </ul>
+            <p class="repo-link">GitHub Repo: <a href="#" target="_blank">Add your repository link here</a></p>
+          </div>
+
+          <div class="card content-card">
+            <h3>Key Strengths</h3>
+            <ul>
+              <li>Strong foundation in system troubleshooting, log analysis, and operational issue resolution.</li>
+              <li>Practical knowledge of automation, CI/CD, containerization, GitOps, and monitoring workflows.</li>
+              <li>Comfortable working with Linux-based environments and deployment-focused tooling.</li>
             </ul>
           </div>
         </div>
@@ -612,26 +677,37 @@
 
     <section id="education">
       <div class="container">
-        <h2 class="section-title">Education & Certifications</h2>
+        <div class="section-heading">
+          <h2 class="section-title">Education, Certifications & Achievements</h2>
+          <p class="section-subtitle">
+            Academic background and supporting credentials aligned with DevOps, automation,
+            operations, and cloud-native tooling.
+          </p>
+        </div>
+
         <div class="grid-3">
-          <div class="card edu-card">
+          <div class="card content-card">
             <h3>Education</h3>
-            <p><strong>Bachelor’s Degree</strong></p>
-            <p class="small-text">North East Christian University</p>
+            <ul>
+              <li><strong>Bachelor’s Degree in Computer Science</strong><br>North East Christian University<br>2021 – 2024</li>
+              <li><strong>Diploma in Engineering</strong><br>Mansa Polytechnic College<br>2018 – 2021</li>
+            </ul>
           </div>
-          <div class="card cert-card">
+
+          <div class="card content-card">
             <h3>Certifications</h3>
             <ul>
-              <li>DevOps Training (Self-Learned via YouTube and Hands-on Practice)</li>
+              <li>DevOps Training through YouTube and Hands-on Practice</li>
               <li>DevOps Master Program – Simplilearn</li>
             </ul>
           </div>
-          <div class="card achievement-card">
+
+          <div class="card content-card">
             <h3>Achievements</h3>
             <ul>
-              <li>Built multiple real-world DevOps projects using modern tools and workflows.</li>
-              <li>Consistently practiced Linux, Git, and automation skills.</li>
-              <li>Strong problem-solving and troubleshooting mindset.</li>
+              <li>Built hands-on projects in CI/CD, automation, containerization, GitOps, and monitoring to develop practical DevOps capabilities.</li>
+              <li>Strengthened troubleshooting, production support, and operational issue resolution skills through 3+ years of professional experience.</li>
+              <li>Applied continuous learning and practical implementation to build knowledge in Linux, scripting, deployment workflows, and cloud-native tools.</li>
             </ul>
           </div>
         </div>
@@ -640,29 +716,32 @@
 
     <section id="contact">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
+        <div class="section-heading">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">
+            Open to DevOps opportunities involving automation, infrastructure support, CI/CD,
+            containerized deployments, monitoring, and cloud-native workflows.
+          </p>
+        </div>
+
         <div class="grid-2">
-          <div class="card contact-card">
+          <div class="card content-card">
             <h3>Get in Touch</h3>
-            <p class="section-subtitle" style="margin-bottom: 14px;">
-              Open to DevOps opportunities, practical projects, and roles involving Linux, automation, monitoring, and
-              CI/CD workflows.
-            </p>
             <ul class="contact-links">
               <li>Email: <a href="mailto:arshitchoubey0001@gmail.com">arshitchoubey0001@gmail.com</a></li>
               <li>Phone: <a href="tel:+916261242640">+91-6261242640</a></li>
-              <li>GitHub: <a href="https://github.com/arshitchoubey18" target="_blank">github.com/arshitchoubey18</a>
-              </li>
+              <li>GitHub: <a href="https://github.com/arshitchoubey18" target="_blank">github.com/arshitchoubey18</a></li>
               <li>LinkedIn: <a href="#" target="_blank">Add your LinkedIn profile URL</a></li>
             </ul>
           </div>
-          <div class="card contact-card">
-            <h3>Quick Note Before Publishing</h3>
+
+          <div class="card content-card">
+            <h3>Before You Publish</h3>
             <ul>
-              <li>Replace the LinkedIn and project repo placeholders with your actual links.</li>
-              <li>Keep this file as <strong>index.html</strong>.</li>
-              <li>Keep your profile image file name exactly as <strong>profile.jpg</strong>.</li>
-              <li>Upload both files to the same GitHub repository root.</li>
+              <li>Replace LinkedIn placeholder with your actual LinkedIn profile link.</li>
+              <li>Replace every project repo placeholder with your real GitHub repository links.</li>
+              <li>Keep your profile image name exactly as <strong>profile.jpg</strong>.</li>
+              <li>Put <strong>index.html</strong>, <strong>profile.jpg</strong>, and <strong>resume.pdf</strong> in the same repository root.</li>
             </ul>
           </div>
         </div>
@@ -672,7 +751,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p>© 2026 Arshit Choubey • DevOps Portfolio</p>
+      <p>© 2026 Arshit Choubey • DevOps Engineer Portfolio</p>
     </div>
   </footer>
 </body>
