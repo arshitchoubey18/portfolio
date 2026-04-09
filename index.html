@@ -23,6 +23,19 @@
       --max-width: 1180px;
     }
 
+    body.light-mode {
+      --bg: #f8fafc;
+      --bg-soft: #e2e8f0;
+      --panel: rgba(255, 255, 255, 0.92);
+      --panel-2: rgba(255, 255, 255, 0.98);
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #2563eb;
+      --accent-2: #059669;
+      --border: rgba(15, 23, 42, 0.10);
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.10);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -40,7 +53,8 @@
       background:
         radial-gradient(circle at top left, rgba(96, 165, 250, 0.18), transparent 25%),
         radial-gradient(circle at top right, rgba(52, 211, 153, 0.12), transparent 22%),
-        linear-gradient(180deg, #06101d 0%, #081120 100%);
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     a {
@@ -65,6 +79,11 @@
       backdrop-filter: blur(14px);
       background: rgba(7, 12, 24, 0.75);
       border-bottom: 1px solid var(--border);
+      transition: background 0.3s ease;
+    }
+
+    body.light-mode .nav {
+      background: rgba(255, 255, 255, 0.85);
     }
 
     .nav-inner {
@@ -117,6 +136,7 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+      transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
     }
 
     .hero-card {
@@ -164,6 +184,13 @@
       border: 1px solid var(--border);
       font-size: 0.92rem;
       color: var(--text);
+      transition: background 0.3s ease;
+    }
+
+    body.light-mode .chip,
+    body.light-mode .profile-item,
+    body.light-mode .tag {
+      background: rgba(15, 23, 42, 0.04);
     }
 
     .hero-actions {
@@ -180,7 +207,7 @@
       border-radius: 12px;
       font-weight: 700;
       border: 1px solid var(--border);
-      transition: transform 0.2s ease, opacity 0.2s ease;
+      transition: transform 0.2s ease, opacity 0.2s ease, background 0.3s ease, color 0.3s ease;
     }
 
     .btn:hover {
@@ -196,6 +223,16 @@
     .btn-secondary {
       background: rgba(255, 255, 255, 0.04);
       color: var(--text);
+    }
+
+    body.light-mode .btn-secondary {
+      background: rgba(15, 23, 42, 0.04);
+      color: var(--text);
+    }
+
+    #themeToggle {
+      cursor: pointer;
+      white-space: nowrap;
     }
 
     .profile-card {
@@ -250,6 +287,7 @@
       border-radius: 16px;
       border: 1px solid var(--border);
       background: rgba(255, 255, 255, 0.03);
+      transition: background 0.3s ease;
     }
 
     .profile-item strong {
@@ -313,6 +351,11 @@
       background: rgba(96, 165, 250, 0.1);
       border: 1px solid rgba(96, 165, 250, 0.2);
       color: #dce8ff;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    body.light-mode .tag {
+      color: var(--text);
     }
 
     ul {
@@ -407,6 +450,10 @@
         width: 110px;
         height: 110px;
       }
+
+      #themeToggle {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -423,6 +470,7 @@
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </div>
+      <button id="themeToggle" class="btn btn-secondary" type="button">☀ Light Mode</button>
     </div>
   </nav>
 
@@ -734,16 +782,6 @@
               <li>LinkedIn: <a href="https://www.linkedin.com/in/arshit-choubey-455659401/" target="_blank">linkedin.com/in/arshit-choubey/</a></li>
             </ul>
           </div>
-
-          <!-- <div class="card content-card">
-            <h3>Before You Publish</h3>
-            <ul>
-              <li>Replace LinkedIn placeholder with your actual LinkedIn profile link.</li>
-              <li>Replace every project repo placeholder with your real GitHub repository links.</li>
-              <li>Keep your profile image name exactly as <strong>profile.jpg</strong>.</li>
-              <li>Put <strong>index.html</strong>, <strong>profile.jpg</strong>, and <strong>resume.pdf</strong> in the same repository root.</li>
-            </ul>
-          </div> -->
         </div>
       </div>
     </section>
@@ -754,6 +792,28 @@
       <p>© 2026 Arshit Choubey • DevOps Engineer Portfolio</p>
     </div>
   </footer>
+
+  <script>
+    const themeToggle = document.getElementById("themeToggle");
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "light") {
+      document.body.classList.add("light-mode");
+      themeToggle.textContent = "🌙 Dark Mode";
+    }
+
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+
+      if (document.body.classList.contains("light-mode")) {
+        localStorage.setItem("theme", "light");
+        themeToggle.textContent = "🌙 Dark Mode";
+      } else {
+        localStorage.setItem("theme", "dark");
+        themeToggle.textContent = "☀ Light Mode";
+      }
+    });
+  </script>
 </body>
 
 </html>
